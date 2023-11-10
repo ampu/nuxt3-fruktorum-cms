@@ -1,0 +1,45 @@
+@mixin sr-only() {
+  position: absolute;
+  z-index: -9999;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  border: none;
+}
+
+@mixin input() {
+  display: flex;
+  width: 353px;
+  padding: 2px 8px;
+
+  border: none;
+  border-bottom: 1px solid $gray;
+  background-color: transparent;
+  color: inherit;
+
+  &:focus {
+    border-color: $blue;
+    outline: none;
+  }
+}
+
+@mixin submit() {
+  display: flex;
+  padding: 10px 50px;
+
+  border: 1px solid $blue;
+  background-color: $blue;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

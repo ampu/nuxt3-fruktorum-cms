@@ -1,0 +1,12 @@
+body::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1920px;
+  height: 5195px;
+
+  background: url("@/assets/../tmp/article.jpg") red;
+  opacity: 50%;
+  pointer-events: none;
+}
