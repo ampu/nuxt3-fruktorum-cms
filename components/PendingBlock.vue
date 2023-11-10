@@ -1,10 +1,11 @@
 <template lang="pug">
 .pending-block
-  .lds-ring
-    div
-    div
-    div
-    div
+  .pending-block__container
+    .lds-ring
+      div
+      div
+      div
+      div
 </template>
 
 <script lang="ts" setup>
@@ -12,10 +13,17 @@
 
 <style lang="scss">
 .pending-block {
+  margin: auto;
+}
+
+.pending-block__container {
+  margin-bottom: 100px;
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 100%;
 }
 
 .lds-ring {

@@ -1,21 +1,21 @@
 <template lang="pug">
-.footer
-  .footer__container
-    .footer__left
+.app-footer
+  .app-footer__container
+    .app-footer__left
       AppLogo
-      p.footer__description
+      p.app-footer__description
         | Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности
 
-    .footer__right
-      p.footer__email
-        span.footer__email-title email
-        a.footer__email-text(href="mailto:testblogsupport@gmail.com") testblogsupport@gmail.com
-      ul.footer__socials
+    .app-footer__right
+      p.app-footer__email
+        span.app-footer__email-title email
+        a.app-footer__email-text(href="mailto:testblogsupport@gmail.com") testblogsupport@gmail.com
+      ul.app-footer__socials
         li(v-for="social in SOCIALS" :key="social.link")
           a(:href="social.link" target="_blank")
             img(:src="social.icon" :alt="social.title")
 
-  SubscribeFormBlock.footer__subscribe
+  SubscribeFormBlock.app-footer__subscribe
 </template>
 
 <script lang="ts" setup>
@@ -33,36 +33,37 @@ const SOCIALS = [
 </script>
 
 <style lang="scss">
-.footer {
+.app-footer {
   display: flex;
   flex-flow: column;
-  padding-top: 50px;
+  margin-top: auto;
+}
+
+.app-footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 100px;
+  margin-bottom: 70px;
+  padding-top: 50px;
 
   border-top: 1px solid $gray;
 }
 
-.footer__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 70px;
-}
-
-.footer__left {
+.app-footer__left {
   width: 426px;
 }
 
-.footer__right {
+.app-footer__right {
   width: 312px;
 }
 
-.footer__email {
+.app-footer__email {
   display: flex;
   flex-flow: column;
 }
 
-.footer__email-text {
+.app-footer__email-text {
   font-size: 18px;
   line-height: 22px;
   text-decoration: none;
@@ -74,15 +75,15 @@ const SOCIALS = [
   }
 }
 
-.footer__email-title {
+.app-footer__email-title {
   color: $gray;
 }
 
-.footer__description {
+.app-footer__description {
   color: $gray;
 }
 
-.footer__socials {
+.app-footer__socials {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -90,7 +91,7 @@ const SOCIALS = [
   gap: 20px;
 }
 
-.footer__subscribe {
+.app-footer__subscribe {
   margin-bottom: 0;
 }
 </style>

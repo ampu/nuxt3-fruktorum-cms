@@ -3,20 +3,20 @@ Html(lang="ru")
   Head
     Title {{ title }}
     Meta(v-if="description" name="description" :content="description")
-    link(rel="preconnect" href="https://fonts.googleapis.com")
-    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet")
+    Link(rel="preconnect" href="https://fonts.googleapis.com")
+    Link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    Link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet")
   Body
     .app.container
       AppHeader
       ErrorBlock(v-if="pageStore.error")
       PendingBlock(v-if="pageStore.pending")
       template(v-for="item in body")
-          component(
-            v-if="TYPE_TO_COMPONENT[item.type]"
-            :is="TYPE_TO_COMPONENT[item.type]"
-            :data="item.data"
-          )
+        component(
+          v-if="TYPE_TO_COMPONENT[item.type]"
+          :is="TYPE_TO_COMPONENT[item.type]"
+          :data="item.data"
+        )
       AppFooter
 </template>
 
