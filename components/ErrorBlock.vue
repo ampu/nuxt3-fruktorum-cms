@@ -31,7 +31,7 @@ const pageStore = usePageStore()
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    color: $blue;
   }
 }
 </style>
