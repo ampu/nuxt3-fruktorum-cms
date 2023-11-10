@@ -6,6 +6,8 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  ssr: true,
+  pages: false,
   modules: [
     `@pinia/nuxt`,
   ],
@@ -27,7 +29,6 @@ export default defineNuxtConfig({
             @import "@/assets/styles/mixins";
             @import "@/assets/styles/variables";
             @import "@/assets/styles/globals";
-            //@import "@/assets/styles/mocks";
           `,
         }
       }

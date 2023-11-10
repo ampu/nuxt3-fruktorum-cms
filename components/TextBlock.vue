@@ -16,6 +16,10 @@ const props = defineProps<{
   margin: 0 auto;
   margin-bottom: 100px;
 
+  @include mobile {
+    width: 320px;
+  }
+
   & h2 {
     font-size: 34px;
     line-height: 34px;
@@ -27,17 +31,25 @@ const props = defineProps<{
     padding: 0;
     margin: 0;
     margin-left: 115px;
+
+    @include mobile {
+      margin-left: 30px;
+    }
   }
 
   & li {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 7px;
 
     &::before {
+      position: absolute;
+      top: 8px;
       content: "";
       width: 11px;
       height: 12px;
+      margin-left: -20px;
       display: flex;
 
       background: url("@/assets/images/list-style-type.svg") no-repeat;

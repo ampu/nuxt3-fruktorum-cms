@@ -2,7 +2,7 @@
 .app-footer
   .app-footer__container
     .app-footer__left
-      AppLogo
+      AppLogo.app-footer__logo
       p.app-footer__description
         | Cтатьи о дизайне и искусстве, которые исследуют творческие вдохновения и актуальные тенденции, раскрывая мир эстетики и креативности
 
@@ -41,6 +41,7 @@ const SOCIALS = [
 
 .app-footer__container {
   display: flex;
+  flex-flow: wrap;
   align-items: center;
   justify-content: space-between;
   margin-top: 100px;
@@ -51,11 +52,26 @@ const SOCIALS = [
 }
 
 .app-footer__left {
+  display: flex;
+  flex-flow: column;
   width: 426px;
+
+  @include mobile {
+    width: auto;
+  }
 }
 
 .app-footer__right {
+  display: flex;
+  flex-flow: column;
   width: 312px;
+}
+
+.footer__socials {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-footer__email {

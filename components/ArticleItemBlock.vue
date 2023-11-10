@@ -18,6 +18,10 @@ const props = defineProps<{
   display: flex;
   flex-flow: column;
   width: 426px;
+
+  @include mobile {
+    width: 320px;
+  }
 }
 
 .article-item-block__image {
@@ -25,7 +29,13 @@ const props = defineProps<{
   display: flex;
   width: 426px;
   height: 320px;
+  object-fit: cover;
   margin-bottom: 20px;
+
+  @include mobile {
+    width: 320px;
+    height: auto;
+  }
 }
 
 .article-item-block__title {
@@ -35,6 +45,8 @@ const props = defineProps<{
 
 .article-item-block__link {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 50px;
   margin-right: auto;
 
@@ -45,6 +57,10 @@ const props = defineProps<{
 
   &:hover {
     background-color: $blue;
+  }
+
+  @include mobile {
+    width: 100%;
   }
 }
 </style>

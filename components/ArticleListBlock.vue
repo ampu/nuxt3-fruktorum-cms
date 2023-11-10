@@ -35,6 +35,6 @@ const props = defineProps<{
 .RelatedArticles__list {
   display: flex;
   flex-flow: wrap;
-  gap: 30px;
+  gap: 60px 30px;
 }
 </style>

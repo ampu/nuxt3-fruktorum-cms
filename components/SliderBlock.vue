@@ -78,6 +78,11 @@ const options = {
   width: 1112px;
   height: 550px;
   object-fit: cover;
+  margin: 0 auto;
+
+  @include mobile {
+    width: 320px;
+  }
 }
 
 .slider-block__pagination-container {

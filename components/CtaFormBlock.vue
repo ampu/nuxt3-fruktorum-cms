@@ -1,7 +1,7 @@
 <template lang="pug">
 .cta-form-block
   .cta-form-block__left
-    img(:src="ctaFormImage" alt="" width="595" height="326")
+    img.cta-form-block__image(:src="ctaFormImage" alt="" width="595" height="326")
   .cta-form-block__right
     form.cta-form-block__form(@submit.prevent)
       strong.cta-form-block__title.h2 Стань участником проекта
@@ -18,15 +18,36 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
 <style lang="scss">
 .cta-form-block {
   display: flex;
+  flex-flow: wrap;
   padding: 60px;
   margin-bottom: 100px;
 
   background-color: $black;
   color: $white;
+
+  @include mobile {
+    padding: 20px;
+  }
+}
+
+.cta-form-block__image {
+  width: 595px;
+  height: 326px;
+
+  @include mobile {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
 }
 
 .cta-form-block__form {
   margin-left: 60px;
+
+  @include mobile {
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .cta-form-block__title {

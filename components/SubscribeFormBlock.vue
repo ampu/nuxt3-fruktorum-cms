@@ -12,6 +12,8 @@ form.subscribe-form-block(@submit.prevent)
 .subscribe-form-block {
   display: flex;
   align-items: center;
+  flex-flow: wrap;
+  gap: 30px;
   padding: 27px 30px;
   margin-bottom: 100px;
   width: 100%;
@@ -25,9 +27,17 @@ form.subscribe-form-block(@submit.prevent)
   margin-top: auto;
   margin-left: auto;
   margin-right: 37px;
+
+  @include mobile {
+    margin-right: 0;
+  }
 }
 
 .subscribe-form-block__submit {
   @include submit();
+
+  @include mobile {
+    width: 100%;
+  }
 }
 </style>

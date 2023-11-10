@@ -34,6 +34,10 @@ const props = defineProps<{
   justify-content: space-between;
   gap: 30px;
   margin-bottom: 100px;
+
+  @include mobile {
+    flex-flow: wrap;
+  }
 }
 
 .intro__image {
@@ -41,15 +45,25 @@ const props = defineProps<{
   width: 541px;
   height: 580px;
   border-radius: 0 225px 0 0;
+
+  @include mobile {
+    width: 320px;
+    height: auto;
+  }
 }
 
 .intro__right {
-  padding-top: 45px;
+  padding-top: 70px;
+
+  @include mobile {
+    padding-top: 0;
+  }
 }
 
 .intro__title {
-  display: flex;
+  margin: 0;
   margin-bottom: 30px;
+  display: flex;
 }
 
 .intro__reading-time {
