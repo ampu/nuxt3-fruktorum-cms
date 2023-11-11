@@ -94,6 +94,7 @@ const options = {
 }
 
 .slider-block__pagination-container {
+  position: relative;
   margin-top: 25px;
   display: flex;
   justify-content: center;
@@ -101,7 +102,8 @@ const options = {
 }
 
 .slider-block__pagination {
-  width: auto;
+  width: auto !important;
+  margin: auto;
 }
 
 .slider-block__prev,
