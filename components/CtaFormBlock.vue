@@ -5,9 +5,9 @@
   .cta-form-block__right
     form.cta-form-block__form(@submit.prevent)
       strong.cta-form-block__title.h2 Стань участником проекта
-      input.cta-form-block__input.body-1(type="text" placeholder="Имя")
-      input.cta-form-block__input.body-1(type="text" placeholder="Телефон")
-      input.cta-form-block__input.body-1(type="text" placeholder="Email")
+      input.cta-form-block__input.body-1(type="text" placeholder="Имя" autocomplete="name" required)
+      input.cta-form-block__input.body-1(type="text" placeholder="Телефон" autocomplete="tel" required)
+      input.cta-form-block__input.body-1(type="email" placeholder="Email" autocomplete="email" required)
       button.cta-form-block__submit.body-1(type="submit") Присоединиться
 </template>
 

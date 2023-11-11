@@ -1,7 +1,7 @@
 <template lang="pug">
 form.subscribe-form-block(@submit.prevent)
   strong.subscribe-form-block__title.h3 Подпишись на рассылку
-  input.subscribe-form-block__input.body-1(placeholder="Email")
+  input.subscribe-form-block__input.body-1(type="email" placeholder="Email" autocomplete="email" required)
   button.subscribe-form-block__submit.body-1(type="submit") Подписаться
 </template>
 
