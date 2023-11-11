@@ -97,6 +97,7 @@ const options = {
   margin-top: 25px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .slider-block__pagination {

@@ -28,6 +28,10 @@ const props = defineProps<{
   object-fit: cover;
 
   border-radius: 0 225px 0 0;
+
+  @include mobile {
+    height: 300px;
+  }
 }
 
 .image-block__caption {
