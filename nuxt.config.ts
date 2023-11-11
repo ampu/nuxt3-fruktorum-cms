@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   pages: false,
   modules: [
     `@pinia/nuxt`,
+    `nuxt-swiper`,
   ],
   runtimeConfig: {
     public: {
@@ -33,5 +34,10 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  swiper: {
+    // prefix: `Swiper`,
+    // styleLang: `scss`,
+    // modules: [`navigation`, `pagination`],
   },
 })

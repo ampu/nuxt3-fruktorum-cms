@@ -1,7 +1,7 @@
 <template lang="pug">
 .error-block
   .error-block__container
-    strong.error-block__title.h2 Сервис временно недоступен
+    strong.error-block__title.h2 Что-то пошло не так...
     NuxtLink.error-block__link.body-1(to="/" @click.prevent="pageStore.refresh") Обновить
 </template>
 

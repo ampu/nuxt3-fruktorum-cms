@@ -1,26 +1,25 @@
 <template lang="pug">
 .slider-block
   .slider-block__container
-    Swiper(v-bind="options")
+    Swiper(v-bind="options" ref="swiper")
       SwiperSlide(v-for="link in props.data" :key="link")
-        img(
-          :src="link"
-          class="slider-block__image"
-          alt=""
-          width="1112"
-          height="550"
-        )
-    div(:class="`slider-block__prev slider-block__prev-${id}`")
+        .slider-block__image-container
+          img(
+            :src="link"
+            class="slider-block__image"
+            alt=""
+            width="1112"
+            height="550"
+          )
+    button(:class="`slider-block__prev slider-block__prev-${id}`")
       PrevIcon
-    div(:class="`slider-block__next slider-block__next-${id}`")
+    button(:class="`slider-block__next slider-block__next-${id}`")
       NextIcon
     div.slider-block__pagination-container.body-1
       div(:class="`slider-block__pagination slider-block__pagination-${id}`")
 </template>
 
 <script lang="ts" setup>
-import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
-import {Pagination, Navigation} from 'swiper'
 import {nanoid} from 'nanoid'
 
 import 'swiper/css'
@@ -39,9 +38,13 @@ const id = nanoid()
 const options = {
   slidesPerView: 1,
   slidesPerGroup: 1,
+  spaceBetween: 60,
+  speed: 300,
+  observer: true,
+  observeParents: true,
   modules: [
-    Pagination,
-    Navigation,
+    SwiperPagination,
+    SwiperNavigation,
   ],
   pagination: {
     el: `.slider-block__pagination-${id}`,
@@ -72,16 +75,21 @@ const options = {
   }
 }
 
-.slider-block__image {
+.slider-block__image-container {
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider-block__image {
   width: 1112px;
   height: 550px;
   object-fit: cover;
-  margin: 0 auto;
 
   @include mobile {
-    width: 320px;
+    width: 640px;
+    height: auto;
   }
 }
 
@@ -107,12 +115,17 @@ const options = {
   justify-content: center;
   align-items: center;
 
+  border: none;
   background-color: $black;
   cursor: pointer;
 
   &.swiper-button-disabled {
     background-color: $gray;
     pointer-events: none;
+  }
+
+  @include mobile {
+    top: 128px;
   }
 }
 
