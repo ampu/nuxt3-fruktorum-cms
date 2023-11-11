@@ -24,6 +24,8 @@
   "dependencies": {
     "normalize.css": "8.0.1",
     "pinia": "2.1.7",
-    "swiper": "11.0.4"
+    "react-number-format": "5.3.1",
+    "swiper": "11.0.4",
+    "veaury": "2.3.12"
   }
 }

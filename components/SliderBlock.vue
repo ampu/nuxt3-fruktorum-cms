@@ -1,8 +1,15 @@
 <template lang="pug">
 .slider-block
   .slider-block__container
-    Swiper(v-bind="options" ref="swiper")
-      SwiperSlide(v-for="link in props.data" :key="link")
+    Swiper(
+      v-bind="options"
+      @init="onInit"
+      @activeIndexChange="onChange"
+    )
+      SwiperSlide(
+        v-for="link in props.data"
+        :key="link"
+      )
         .slider-block__image-container
           img(
             :src="link"
@@ -11,12 +18,19 @@
             width="1112"
             height="550"
           )
-    button(:class="`slider-block__prev slider-block__prev-${id}`")
+    button.slider-block__prev(
+      @click="onPrev"
+      :disabled="currentSlide === 0"
+    )
       PrevIcon
-    button(:class="`slider-block__next slider-block__next-${id}`")
+    button.slider-block__next(
+      @click="onNext"
+      :disabled="currentSlide + 1 === data.length"
+    )
       NextIcon
     div.slider-block__pagination-container.body-1
-      div(:class="`slider-block__pagination slider-block__pagination-${id}`")
+      div.slider-block__pagination
+        | {{ currentSlide + 1 }} / {{ props.data.length }}
 </template>
 
 <script lang="ts" setup>
@@ -33,27 +47,27 @@ const props = defineProps<{
   data: string[],
 }>()
 
-const id = nanoid()
+const swiper = ref<any>()
+const currentSlide = ref(0)
 
 const options = {
   slidesPerView: 1,
-  slidesPerGroup: 1,
-  spaceBetween: 60,
-  speed: 300,
-  observer: true,
-  observeParents: true,
-  modules: [
-    SwiperPagination,
-    SwiperNavigation,
-  ],
-  pagination: {
-    el: `.slider-block__pagination-${id}`,
-    type: `fraction`,
-  },
-  navigation: {
-    nextEl: `.slider-block__next-${id}`,
-    prevEl: `.slider-block__prev-${id}`,
-  },
+}
+
+const onInit = (instance: any) => {
+  swiper.value = instance
+}
+
+const onChange = () => {
+  currentSlide.value = swiper.value.activeIndex
+}
+
+const onPrev = () => {
+  swiper.value.slidePrev()
+}
+
+const onNext = () => {
+  swiper.value.slideNext()
 }
 </script>
 
@@ -108,6 +122,7 @@ const options = {
 
 .slider-block__prev,
 .slider-block__next {
+  content: "";
   position: absolute;
   z-index: 1;
   top: 245px;
@@ -122,7 +137,8 @@ const options = {
   background-color: $black;
   cursor: pointer;
 
-  &.swiper-button-disabled {
+  &.swiper-button-disabled,
+  &:disabled {
     background-color: $gray;
     pointer-events: none;
   }

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  ssr: false,
+  ssr: true,
   pages: false,
   modules: [
     `@pinia/nuxt`,
@@ -34,10 +34,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  },
-  swiper: {
-    // prefix: `Swiper`,
-    // styleLang: `scss`,
-    // modules: [`navigation`, `pagination`],
   },
 })
