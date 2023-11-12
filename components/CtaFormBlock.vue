@@ -5,9 +5,10 @@
   .cta-form-block__right
     form.cta-form-block__form(@submit.prevent)
       strong.cta-form-block__title.h2 Стань участником проекта
-      input.cta-form-block__input.body-1(type="text" placeholder="Имя" autocomplete="name" required)
-      UiPhoneInput.cta-form-block__input
-      UiEmailInput.cta-form-block__input
+      .cta-form-block__inputs
+        input.cta-form-block__input.body-1(type="text" placeholder="Имя" autocomplete="name" required)
+        UiPhoneInput.cta-form-block__input.cta-form-block__input--phone
+        UiEmailInput.cta-form-block__input
       button.cta-form-block__submit.body-1(type="submit") Присоединиться
 </template>
 
@@ -55,9 +56,22 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
   margin-bottom: 40px;
 }
 
+.cta-form-block__inputs {
+  width: 353px;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
 .cta-form-block__input {
   @include input();
   margin-bottom: 25px;
+  width: 100%;
+
+  &--phone {
+    width: calc(100% - 16px);
+  }
 }
 
 .cta-form-block__submit {
