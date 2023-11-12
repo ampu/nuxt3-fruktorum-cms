@@ -1,5 +1,5 @@
 <template lang="pug">
-uiPatternInput.body-1(
+UiPatternInput.body-1(
   type="tel"
   name="phone"
   placeholder="Телефон"

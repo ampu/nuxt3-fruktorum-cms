@@ -1,10 +1,10 @@
 <template lang="pug">
 NuxtLink(to="/")
-  LogoComponent
+  LogoIcon
 </template>
 
 <script lang="ts" setup>
-import LogoComponent from '@/assets/images/logo.svg?component'
+import LogoIcon from '@/assets/images/logo.svg?component'
 </script>
 
 <style lang="scss">

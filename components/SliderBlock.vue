@@ -83,10 +83,6 @@ const onNext = () => {
 .slider-block__container {
   position: relative;
   width: 100%;
-
-  & .swiper-pagination {
-    position: relative !important;
-  }
 }
 
 .slider-block__image-container {
@@ -116,7 +112,7 @@ const onNext = () => {
 }
 
 .slider-block__pagination {
-  width: auto !important;
+  width: auto;
   margin: auto;
 }
 
