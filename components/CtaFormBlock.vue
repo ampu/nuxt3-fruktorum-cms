@@ -72,6 +72,12 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
   &--phone {
     width: calc(100% - 16px);
   }
+
+  &:-webkit-autofill {
+    caret-color: $white;
+    -webkit-text-fill-color: $white;
+    -webkit-box-shadow: 0 0 0 30px $black inset;
+  }
 }
 
 .cta-form-block__submit {
