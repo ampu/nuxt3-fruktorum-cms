@@ -3,10 +3,13 @@
   .cta-form-block__left
     img.cta-form-block__image(:src="ctaFormImage" alt="" width="595" height="326")
   .cta-form-block__right
-    form.cta-form-block__form(@submit.prevent)
+    form.cta-form-block__form(
+      method="POST"
+      action="https://httpbin.org/post"
+    )
       strong.cta-form-block__title.h2 Стань участником проекта
       .cta-form-block__inputs
-        input.cta-form-block__input.body-1(type="text" placeholder="Имя" autocomplete="name" required)
+        UiNameInput.cta-form-block__input
         UiPhoneInput.cta-form-block__input.cta-form-block__input--phone
         UiEmailInput.cta-form-block__input
       button.cta-form-block__submit.body-1(type="submit") Присоединиться

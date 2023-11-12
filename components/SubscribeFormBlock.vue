@@ -1,5 +1,8 @@
 <template lang="pug">
-form.subscribe-form-block(@submit.prevent)
+form.subscribe-form-block(
+  method="POST"
+  action="https://httpbin.org/post"
+)
   strong.subscribe-form-block__title.h3 Подпишись на рассылку
   UiEmailInput.subscribe-form-block__input
   button.subscribe-form-block__submit.body-1(type="submit") Подписаться

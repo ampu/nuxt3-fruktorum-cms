@@ -1,9 +1,9 @@
 <template lang="pug">
 input.body-1(
-  type="email"
-  name="email"
-  placeholder="Email"
-  autocomplete="email"
+  type="text"
+  name="name"
+  placeholder="Имя"
+  autocomplete="name"
   required
 )
 </template>
