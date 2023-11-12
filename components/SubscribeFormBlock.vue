@@ -31,7 +31,7 @@ form.subscribe-form-block(
   margin-left: auto;
   margin-right: 37px;
 
-  @include mobile {
+  @include tablet-mobile {
     margin-right: 0;
   }
 }
@@ -39,7 +39,7 @@ form.subscribe-form-block(
 .subscribe-form-block__submit {
   @include submit();
 
-  @include mobile {
+  @include tablet-mobile {
     width: 100%;
   }
 }

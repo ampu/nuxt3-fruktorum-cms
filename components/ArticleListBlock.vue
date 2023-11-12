@@ -30,11 +30,17 @@ const props = defineProps<{
 .RelatedArticles__title {
   font-size: 34px;
   line-height: 46px;
+
+  @include tablet {
+    text-align: center;
+  }
 }
 
 .RelatedArticles__list {
   display: flex;
   flex-flow: wrap;
   gap: 60px 30px;
+  justify-content: center;
+  align-items: center;
 }
 </style>

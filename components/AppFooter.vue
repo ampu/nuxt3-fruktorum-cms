@@ -56,7 +56,7 @@ const SOCIALS = [
   flex-flow: column;
   width: 426px;
 
-  @include mobile {
+  @include tablet-mobile {
     width: auto;
   }
 }

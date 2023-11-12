@@ -17,10 +17,12 @@ const props = defineProps<{
 .article-item-block {
   display: flex;
   flex-flow: column;
+  justify-content: center;
+  align-items: center;
   width: 426px;
 
   @include mobile {
-    width: 320px;
+    width: $width--mobile;
   }
 }
 
@@ -32,8 +34,8 @@ const props = defineProps<{
   object-fit: cover;
   margin-bottom: 20px;
 
-  @include mobile {
-    width: 320px;
+  @include tablet-mobile {
+    width: 100%;
     height: auto;
   }
 }
@@ -59,7 +61,7 @@ const props = defineProps<{
     background-color: $blue;
   }
 
-  @include mobile {
+  @include tablet-mobile {
     width: 100%;
   }
 }

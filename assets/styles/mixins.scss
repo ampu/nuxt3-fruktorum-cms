@@ -1,11 +1,23 @@
 @mixin mobile {
-  @media (max-width: $width--desktop - 1px) {
+  @media (max-width: $width--tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $width--tablet) and (max-width: $width--desktop - 1px) {
     @content;
   }
 }
 
 @mixin desktop {
   @media (min-width: $width--desktop) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media (max-width: $width--desktop - 1px) {
     @content;
   }
 }
@@ -25,7 +37,7 @@
     outline: none;
   }
 
-  @include mobile {
+  @include tablet-mobile {
     width: 100%;
   }
 }
@@ -45,7 +57,7 @@
     background-color: transparent;
   }
 
-  @include mobile {
+  @include tablet-mobile {
     width: 100%;
   }
 }

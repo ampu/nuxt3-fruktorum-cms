@@ -16,8 +16,8 @@ const props = defineProps<{
   margin: 0 auto;
   margin-bottom: 100px;
 
-  @include mobile {
-    width: 320px;
+  @include tablet-mobile {
+    width: 100%;
   }
 
   & h2 {
@@ -32,7 +32,7 @@ const props = defineProps<{
     margin: 0;
     margin-left: 115px;
 
-    @include mobile {
+    @include tablet-mobile {
       margin-left: 30px;
     }
   }

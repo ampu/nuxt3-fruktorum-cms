@@ -35,9 +35,15 @@ const props = defineProps<{
   gap: 30px;
   margin-bottom: 100px;
 
-  @include mobile {
+  @include tablet-mobile {
     flex-flow: wrap;
   }
+}
+
+.intro__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro__image {
@@ -45,9 +51,11 @@ const props = defineProps<{
   width: 541px;
   height: 580px;
   border-radius: 0 225px 0 0;
+  object-fit: cover;
 
   @include mobile {
-    width: 320px;
+    margin: auto;
+    width: 100%;
     height: auto;
   }
 }
@@ -55,7 +63,7 @@ const props = defineProps<{
 .intro__right {
   padding-top: 70px;
 
-  @include mobile {
+  @include tablet-mobile {
     padding-top: 0;
   }
 }

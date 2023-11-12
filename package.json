@@ -17,15 +17,15 @@
     "pug": "3.0.2",
     "sass": "1.69.5",
     "vite-plugin-pug": "0.3.2",
-    "vite-svg-loader": "4.0.0",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "vite-svg-loader": "4.0.0"
   },
   "dependencies": {
     "normalize.css": "8.0.1",
     "pinia": "2.1.7",
     "react-number-format": "5.3.1",
     "swiper": "11.0.4",
-    "veaury": "2.3.12"
+    "veaury": "2.3.12",
+    "vue": "3.3.8",
+    "vue-router": "4.2.5"
   }
 }

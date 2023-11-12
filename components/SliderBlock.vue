@@ -97,8 +97,13 @@ const onNext = () => {
   height: 550px;
   object-fit: cover;
 
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
+
   @include mobile {
-    width: 640px;
+    width: 460px;
     height: auto;
   }
 }
@@ -139,8 +144,12 @@ const onNext = () => {
     pointer-events: none;
   }
 
+  @include tablet {
+    top: 160px;
+  }
+
   @include mobile {
-    top: 128px;
+    top: 84px;
   }
 }
 

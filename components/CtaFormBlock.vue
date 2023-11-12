@@ -29,8 +29,24 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
   background-color: $black;
   color: $white;
 
+  @include tablet {
+    padding: 40px;
+    padding-top: 80px;
+  }
+
   @include mobile {
     padding: 20px;
+  }
+}
+
+.cta-form-block__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 
@@ -48,7 +64,7 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
 .cta-form-block__form {
   margin-left: 60px;
 
-  @include mobile {
+  @include tablet-mobile {
     width: 100%;
     margin-left: 0;
   }
@@ -57,10 +73,19 @@ import ctaFormImage from '@/assets/images/cta-form.jpg?url'
 .cta-form-block__title {
   display: flex;
   margin-bottom: 40px;
+
+  @include tablet {
+    justify-content: center;
+    aign-items: center;
+  }
 }
 
 .cta-form-block__inputs {
   width: 353px;
+
+  @include tablet {
+    width: calc($width--tablet - 80px);
+  }
 
   @include mobile {
     width: 100%;
