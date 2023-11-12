@@ -13,8 +13,8 @@ Html(lang="ru")
       PendingBlock(v-if="pageStore.pending")
       template(v-for="item in body")
         component(
-          v-if="TYPE_TO_COMPONENT[item.type]"
-          :is="TYPE_TO_COMPONENT[item.type]"
+          v-if="TYPE_TO_BLOCK[item.type]"
+          :is="TYPE_TO_BLOCK[item.type]"
           :data="item.data"
         )
       AppFooter
@@ -24,7 +24,7 @@ Html(lang="ru")
 import {usePageStore} from '~/stores/page-store'
 import {ArticleIntroBlock, ImageBlock, ArticleListBlock, SliderBlock, SubscribeFormBlock, TextBlock, CtaFormBlock} from '#components'
 
-const TYPE_TO_COMPONENT = {
+const TYPE_TO_BLOCK = {
   article_list_block: ArticleListBlock,
   article_intro_block: ArticleIntroBlock,
   text_block: TextBlock,

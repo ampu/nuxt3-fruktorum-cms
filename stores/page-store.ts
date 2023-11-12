@@ -21,7 +21,7 @@ export const usePageStore = defineStore(`page`, () => {
   })
 
   const refresh = () => {
-    doRefresh.value()
+    doRefresh.value?.()
   }
 
   return {
