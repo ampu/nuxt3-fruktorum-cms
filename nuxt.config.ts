@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  ssr: true,
+  ssr: false,
   pages: false,
   modules: [
     `@pinia/nuxt`,
