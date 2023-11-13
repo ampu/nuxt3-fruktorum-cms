@@ -1,16 +1,16 @@
 <template lang="pug">
-section.intro
-  .intro__left
-    img.intro__image(:src="data.image" width="541" height="580")
-  .intro__right
-    h1.intro__title.h1 {{ data.title }}
-    p.intro__reading-time
+section.article-intro-block
+  .article-intro-block__left
+    img.article-intro-block__image(:src="data.image" width="541" height="580")
+  .article-intro-block__right
+    h1.article-intro-block__title.h1 {{ data.title }}
+    p.article-intro-block__reading-time
       ReadingTimeIcon
       | {{ data.reading_time }} мин время чтения
-    p.intro__views-count
+    p.article-intro-block__views-count
       ViewsCountIcon
       | {{ data.views_count }} прочитали статью
-    p.intro__description.body-1 {{ data.short_description }}
+    p.article-intro-block__description.body-1 {{ data.short_description }}
 </template>
 
 <script lang="ts" setup>
@@ -29,7 +29,7 @@ const props = defineProps<{
 </script>
 
 <style lang="scss">
-.intro {
+.article-intro-block {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -40,13 +40,13 @@ const props = defineProps<{
   }
 }
 
-.intro__left {
+.article-intro-block__left {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.intro__image {
+.article-intro-block__image {
   display: flex;
   width: 541px;
   height: 580px;
@@ -60,7 +60,7 @@ const props = defineProps<{
   }
 }
 
-.intro__right {
+.article-intro-block__right {
   padding-top: 70px;
 
   @include tablet-mobile {
@@ -68,13 +68,13 @@ const props = defineProps<{
   }
 }
 
-.intro__title {
+.article-intro-block__title {
   margin: 0;
   margin-bottom: 30px;
   display: flex;
 }
 
-.intro__reading-time {
+.article-intro-block__reading-time {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -84,7 +84,7 @@ const props = defineProps<{
   color: $gray;
 }
 
-.intro__views-count {
+.article-intro-block__views-count {
   display: flex;
   align-items: center;
   gap: 8px;

@@ -1,7 +1,7 @@
 <template lang="pug">
-.RelatedArticles
-  h2.RelatedArticles__title {{ data.title }}
-  .RelatedArticles__list
+.article-list-block
+  h2.article-list-block__title {{ data.title }}
+  .article-list-block__list
     ArticleItemBlock(
       v-for="article in data.articles"
       :key="article.link"
@@ -21,13 +21,13 @@ const props = defineProps<{
 </script>
 
 <style lang="scss">
-.RelatedArticles {
+.article-list-block {
   display: flex;
   flex-flow: column;
   margin-bottom: 100px;
 }
 
-.RelatedArticles__title {
+.article-list-block__title {
   font-size: 34px;
   line-height: 46px;
 
@@ -36,7 +36,7 @@ const props = defineProps<{
   }
 }
 
-.RelatedArticles__list {
+.article-list-block__list {
   display: flex;
   flex-flow: wrap;
   gap: 60px 30px;
