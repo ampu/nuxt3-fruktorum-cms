@@ -41,6 +41,6 @@ const props = defineProps<{
   flex-flow: wrap;
   gap: 60px 30px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 </style>
